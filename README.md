@@ -63,10 +63,14 @@ to fix error (https://github.com/expo/expo/issues/21469)
 
 # Backlog
 
-- simplified version of routing with switch statement
-  - insert button to navigate between pages  
-- migrate one page code and split it into components
-- open individual item descriptions
+- change the hardcoded values of the pages with variables
+- style the buttons of routing and avoid code duplication by creating a component (for instance to main page)
+- migrate one page code tha provide the map and split it into components
+- study how to open individual item descriptions page
 - consider a different name
   - consider to use an app's name that is easier to be found and understood ('paths of peace, nonviolent tourism')
 - git merge or delete main branch
+
+Done: 
+- simplified version of routing with switch statement
+  
