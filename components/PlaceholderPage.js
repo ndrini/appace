@@ -13,6 +13,6 @@ export default function PlaceholderPage({ page }) {
 const styles = StyleSheet.create({
     placeholderPage: {
         color: '#fff',
-        fontSize: 16,
+        fontSize: 16
     },
 });

@@ -5,6 +5,9 @@ import { useState } from 'react';
 import PlaceholderPage from './components/PlaceholderPage';
 import Button from './components/Button';
 
+import stylesMain from './styles';
+import {constIcons} from './constants';
+
 let pCredits = "credits";
 
 
@@ -20,26 +23,29 @@ export default function App() {
   switch (page) {
     case "main":
       return (
-        <View>
+        <View style={ stylesMain.main}>
           <PlaceholderPage
             page={"main"}
           />
-          <Button
-            label="map"
-            iconType={"map-marker"}
-            onPress={onPressMap}
-          />
-          <Button
-            label="list"
-            iconType={"list-ul"}
-            onPress={onPressList}
-          />
-          <Button
-            label="credit"
-            iconType={"book"}
-            onPress={onPressCredit}
-          />
-
+          <View style={styles.optionsContainer}>
+            <View style={styles.optionsRow}>
+              <Button
+                label="map"
+                iconType={"map-marker"}
+                onPress={onPressMap}
+              />
+              <Button
+                label="list"
+                iconType={"list-ul"}
+                onPress={onPressList}
+              />
+              <Button
+                label="credit"
+                iconType={"book"}
+                onPress={onPressCredit}
+              />
+            </View>
+          </View>
         </View>
       );
     case "credits":
@@ -50,7 +56,7 @@ export default function App() {
           />
           <Button
             label="main"
-            iconType={"arrow-left"}
+            iconType={constIcons.backToMain}
             onPress={onPressMain}
           />
         </View>
@@ -93,4 +99,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 80
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row'
+
+  }
 });

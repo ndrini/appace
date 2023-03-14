@@ -64,7 +64,9 @@ to fix error (https://github.com/expo/expo/issues/21469)
 # Backlog
 
 - change the hardcoded values of the pages with variables
+  - leverage the constants.js file    
 - style the buttons of routing and avoid code duplication by creating a component (for instance to main page)
+- simplify the code before moving in further steps
 - migrate one page code tha provide the map and split it into components
 - study how to open individual item descriptions page
 - consider a different name
