@@ -3,10 +3,10 @@ import { StyleSheet, View, Text } from "react-native";
 
 export default function PlaceholderPage({ page }) {
     return (
-    <View style={styles.placeholderPage}>
-    <Text> page {page} </Text>
-    </View>
-  );
+        <View style={styles.placeholderPage}>
+            <Text> page {page} </Text>
+        </View>
+    );
 }
 
 

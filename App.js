@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import PlaceholderPage from './components/PlaceholderPage';
 import Button from './components/Button';
+import ButtonBack from './components/ButtonBack';
 
 import stylesMain from './styles';
 import { pages, constIcons } from './constants';
@@ -12,8 +13,8 @@ import { pages, constIcons } from './constants';
 export default function App() {
   const [page, setPage] = useState("main")
 
-  const onPressMain = () => { setPage(pages.main); }
-  const onPressToPage = (pageName) => { setPage(pageName); }
+  // const onPressToMain = () => { setPage(pages.main); }
+  const onPressGoToPage = (pageName) => { setPage(pageName); }
 
 
   switch (page) {
@@ -28,29 +29,29 @@ export default function App() {
               <Button
                 label="Map of Places (map)"
                 iconType={"map-marker"}
-                onPress={() => onPressToPage(pages.map)}
+                onPress={() => onPressGoToPage(pages.map)}
               />
               <Button
                 label="Places of peace (list)"
                 iconType={"list-ul"}
-                onPress={() => onPressToPage(pages.list)}
+                onPress={() => onPressGoToPage(pages.list)}
               />
             </View>
             <View style={styles.optionsRow}>
               <Button
                 label="Presentation"
                 iconType={"search"}
-                onPress={() => onPressToPage(pages.presentation)}
+                onPress={() => onPressGoToPage(pages.presentation)}
               />
               <Button
                 label="Sources"
                 iconType={"pencil"}
-                onPress={() => onPressToPage(pages.sources)}
+                onPress={() => onPressGoToPage(pages.sources)}
               />
               <Button
                 label="Credits"
                 iconType={"book"}
-                onPress={() => onPressToPage(pages.credits)}
+                onPress={() => onPressGoToPage(pages.credits)}
               />
             </View>
           </View>
@@ -62,12 +63,7 @@ export default function App() {
           <PlaceholderPage
             page={"map"}
           />
-
-          <Button
-            label="main"
-            iconType={"back"}
-            onPress={onPressMain}
-          />
+          <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
         </View >
       );
     case "list":
@@ -77,11 +73,8 @@ export default function App() {
             page={"list"}
           />
 
-          <Button
-            label="main"
-            iconType={"back"}
-            onPress={onPressMain}
-          />
+          <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
+
         </View >
       );
     case pages.presentation:
@@ -91,11 +84,8 @@ export default function App() {
             page={pages.presentation}
           />
 
-          <Button
-            label="main"
-            iconType={"back"}
-            onPress={onPressMain}
-          />
+          <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
+
         </View >
       );
     case pages.sources:
@@ -104,11 +94,8 @@ export default function App() {
           <PlaceholderPage
             page={pages.sources}
           />
-          <Button
-            label="main"
-            iconType={constIcons.backToMain}
-            onPress={onPressMain}
-          />
+          <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
+
         </View>
       );
     case pages.credits:
@@ -117,11 +104,8 @@ export default function App() {
           <PlaceholderPage
             page={pages.credits}
           />
-          <Button
-            label="main"
-            iconType={constIcons.backToMain}
-            onPress={onPressMain}
-          />
+          <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
+
         </View>
       );
     default:
@@ -130,11 +114,7 @@ export default function App() {
           <PlaceholderPage
             page={"NO ANY page STATE VALUE!!!"}
           />
-          <Button
-            label="main"
-            iconType={"back"}
-            onPress={onPressMain}
-          />
+          <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
         </View>
 
       );
