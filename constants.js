@@ -1,4 +1,4 @@
-const constColors = {
+export const constColors = {
     background: '#7e0c04',
     secondary: '#6c757d',
     success: '#28a745',
@@ -19,4 +19,14 @@ const fonts = {
     light: 'OpenSans-Light',
 };
 
-export default { constColors, fonts, constIcons };
+export let pages = {
+    map : "map",
+    list : "list",
+    presentation : "presentation",
+    sources: "sources",
+    credits : "credits",
+    main : "main",
+
+}
+
+export { fonts, constIcons };

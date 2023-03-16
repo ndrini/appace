@@ -6,7 +6,8 @@ import PlaceholderPage from './components/PlaceholderPage';
 import Button from './components/Button';
 
 import stylesMain from './styles';
-import {constIcons} from './constants';
+import { pages, constIcons } from './constants';
+// import constants from './constants';
 
 let pCredits = "credits";
 
@@ -14,33 +15,49 @@ let pCredits = "credits";
 export default function App() {
   const [page, setPage] = useState("main")
 
-  const onPressCredit = () => { setPage("credits"); }
-  const onPressMap = () => { setPage("map"); }
-  const onPressList = () => { setPage("list"); }
-  const onPressMain = () => { setPage("main"); }
-
+  const onPressMap = () => { setPage(pages.map); }
+  const onPressList = () => { setPage(pages.list); }
+  const onPressPresentation = () => { setPage(pages.presentation); }
+  const onPressSources = () => { setPage(pages.sources); }
+  const onPressCredit = () => { setPage(pages.credits); }
+  
+  const onPressMain = () => { setPage(pages.main); }
+  const onPressToPage = (pageName) => { setPage(pageName); }
+  
 
   switch (page) {
     case "main":
       return (
-        <View style={ stylesMain.main}>
+        <View style={stylesMain.main}>
           <PlaceholderPage
             page={"main"}
           />
           <View style={styles.optionsContainer}>
             <View style={styles.optionsRow}>
               <Button
-                label="map"
+                label="Map of Places (map)"
                 iconType={"map-marker"}
                 onPress={onPressMap}
               />
               <Button
-                label="list"
+                label="Places of peace (list)"
                 iconType={"list-ul"}
                 onPress={onPressList}
               />
+            </View>
+            <View style={styles.optionsRow}>
               <Button
-                label="credit"
+                label="Presentation"
+                iconType={"search"}
+                onPress={onPressPresentation}
+              />
+              <Button
+                label="Sources"
+                iconType={"pencil"}
+                onPress={onPressSources}
+              />
+              <Button
+                label="Credits"
                 iconType={"book"}
                 onPress={onPressCredit}
               />
@@ -48,18 +65,19 @@ export default function App() {
           </View>
         </View>
       );
-    case "credits":
+    case "map":
       return (
-        <View>
+        <View >
           <PlaceholderPage
-            page={"credits"}
+            page={"map"}
           />
+
           <Button
             label="main"
-            iconType={constIcons.backToMain}
+            iconType={"back"}
             onPress={onPressMain}
           />
-        </View>
+        </View >
       );
     case "list":
       return (
@@ -75,6 +93,46 @@ export default function App() {
           />
         </View >
       );
+    case pages.presentation:
+      return (
+        <View >
+          <PlaceholderPage
+            page={pages.presentation}
+          />
+
+          <Button
+            label="main"
+            iconType={"back"}
+            onPress={onPressMain}
+          />
+        </View >
+      );
+    case pages.sources:
+      return (
+        <View>
+          <PlaceholderPage
+            page={pages.sources}
+          />
+          <Button
+            label="main"
+            iconType={constIcons.backToMain}
+            onPress={onPressMain}
+          />
+        </View>
+      );
+      case pages.credits:
+        return (
+          <View>
+            <PlaceholderPage
+              page={pages.credits}
+            />
+            <Button
+              label="main"
+              iconType={constIcons.backToMain}
+              onPress={onPressMain}
+            />
+          </View>
+        );
     default:
       return (
         <View>

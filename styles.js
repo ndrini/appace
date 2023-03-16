@@ -1,11 +1,13 @@
 // import { StyleSheet } from 'react-native';
 
 // const stylesMain = StyleSheet.create({
-import constants from './constants';
+// import constants from './constants';
+import {constColors} from './constants';
+
 
 const stylesMain = {
     main: {
-      backgroundColor: constants.constColors.background,
+      backgroundColor: constColors.background,
       flex: 1,
     },
   };
