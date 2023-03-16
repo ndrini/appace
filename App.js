@@ -9,21 +9,12 @@ import stylesMain from './styles';
 import { pages, constIcons } from './constants';
 // import constants from './constants';
 
-let pCredits = "credits";
-
-
 export default function App() {
   const [page, setPage] = useState("main")
 
-  const onPressMap = () => { setPage(pages.map); }
-  const onPressList = () => { setPage(pages.list); }
-  const onPressPresentation = () => { setPage(pages.presentation); }
-  const onPressSources = () => { setPage(pages.sources); }
-  const onPressCredit = () => { setPage(pages.credits); }
-  
   const onPressMain = () => { setPage(pages.main); }
   const onPressToPage = (pageName) => { setPage(pageName); }
-  
+
 
   switch (page) {
     case "main":
@@ -37,29 +28,29 @@ export default function App() {
               <Button
                 label="Map of Places (map)"
                 iconType={"map-marker"}
-                onPress={onPressMap}
+                onPress={() => onPressToPage(pages.map)}
               />
               <Button
                 label="Places of peace (list)"
                 iconType={"list-ul"}
-                onPress={onPressList}
+                onPress={() => onPressToPage(pages.list)}
               />
             </View>
             <View style={styles.optionsRow}>
               <Button
                 label="Presentation"
                 iconType={"search"}
-                onPress={onPressPresentation}
+                onPress={() => onPressToPage(pages.presentation)}
               />
               <Button
                 label="Sources"
                 iconType={"pencil"}
-                onPress={onPressSources}
+                onPress={() => onPressToPage(pages.sources)}
               />
               <Button
                 label="Credits"
                 iconType={"book"}
-                onPress={onPressCredit}
+                onPress={() => onPressToPage(pages.credits)}
               />
             </View>
           </View>
@@ -120,19 +111,19 @@ export default function App() {
           />
         </View>
       );
-      case pages.credits:
-        return (
-          <View>
-            <PlaceholderPage
-              page={pages.credits}
-            />
-            <Button
-              label="main"
-              iconType={constIcons.backToMain}
-              onPress={onPressMain}
-            />
-          </View>
-        );
+    case pages.credits:
+      return (
+        <View>
+          <PlaceholderPage
+            page={pages.credits}
+          />
+          <Button
+            label="main"
+            iconType={constIcons.backToMain}
+            onPress={onPressMain}
+          />
+        </View>
+      );
     default:
       return (
         <View>
