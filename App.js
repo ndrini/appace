@@ -5,6 +5,9 @@ import { useState } from 'react';
 import PlaceholderPage from './components/PlaceholderPage';
 import Button from './components/Button';
 import ButtonBack from './components/ButtonBack';
+import MainImageViewer from './components/MainImageViewer';
+
+import PageList from './components/PageList';
 
 import stylesMain from './styles';
 import { pages, constIcons } from './constants';
@@ -21,9 +24,16 @@ export default function App() {
     case "main":
       return (
         <View style={stylesMain.main}>
+
           <PlaceholderPage
             page={"main"}
           />
+
+          <View>
+            <MainImageViewer />
+          </View>
+
+
           <View style={styles.optionsContainer}>
             <View style={styles.optionsRow}>
               <Button
@@ -72,7 +82,7 @@ export default function App() {
           <PlaceholderPage
             page={"list"}
           />
-
+          {/* <PageList /> */}
           <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
 
         </View >
