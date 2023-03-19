@@ -144,11 +144,13 @@ const styles = StyleSheet.create({
   },
   optionsContainer: {
     position: 'absolute',
-    bottom: 80
+    bottom: 20
   },
   optionsRow: {
     alignItems: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flexWrap: "wrap",
+    maxWidth: "90%"
 
   }
 });
