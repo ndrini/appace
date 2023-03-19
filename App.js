@@ -155,6 +155,8 @@ export default function App() {
           <PlaceholderPage
             page={pages.credits}
           />
+
+          <Text> the page txt {getTexts(language, "PageTextCredits")}</Text>
           <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
 
         </View>

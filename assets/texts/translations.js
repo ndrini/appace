@@ -1,5 +1,13 @@
 // import { pages } from "../../constants";
+import yaml from 'js-yaml';
 
+
+// let fileContents = fs.readFileSync('./data-multi.yaml', 'utf8');
+// let data = yaml.safeLoadAll(fileContents);
+
+import CreditsEn from "./creditsEn";
+import {CreditsIt} from "./credits.it.yaml";
+import {CreditsEs} from "./credits.es.yaml";
 
 export const translations = {
     en: {
@@ -9,7 +17,8 @@ export const translations = {
       MainMenuButtonTextList: "List of Places",
       MainMenuButtonTextPresentation: "Presentation",
       MainMenuButtonTextSources: "Sources",
-      MainMenuButtonTextCredits: "Credits",      
+      MainMenuButtonTextCredits: "Credits",  
+      PageTextCredits: CreditsEn,    
     },
     it: {
       welcomeMessage: 'Benvenuti nella mia app!',
@@ -19,6 +28,10 @@ export const translations = {
       MainMenuButtonTextPresentation: "Presentazione",
       MainMenuButtonTextSources: "Fonti",
       MainMenuButtonTextCredits: "Crediti", 
+      PageTextCredits: CreditsIt 
+      // yaml.safeLoad(
+      //   fs.readFileSync("./credits.en.yaml", "utf-8")
+      //   ).CreditsIt, 
     },
     es: {
       welcomeMessage: '¡Bienvenido a mi aplicación!',
@@ -28,6 +41,7 @@ export const translations = {
       MainMenuButtonTextPresentation: "Presentación",
       MainMenuButtonTextSources: "Fuentes",
       MainMenuButtonTextCredits: "Créditos", 
+      PageTextCredits: yaml.safeLoad(CreditsEs), 
     },
     ca: {
       welcomeMessage: '¡Benvingut a la meva aplicació!',
