@@ -1,8 +1,14 @@
 
 # Aim 
-Clone functionalities of Android's Appace APP, and provide further access in IOS platforms and , if possible, in web version. 
+Clone functionalities of Android's Appace APP, and provide further access in IOS platforms and, if possible, in web version. 
 
 Developed with the permission of and in collaboration with MIR Padova association. 
+
+# Implement new locations or languages
+The file assets/texts/translations.js contains the core map to supported languages. 
+
+
+
 
 # Develop
 
@@ -34,7 +40,7 @@ To allow web development
 The url is https://docs.expo.dev/tutorial/create-your-first-app
 
 
-## check the environment
+## Check the environment
 
 Already installed: 
   - node
@@ -46,6 +52,13 @@ Check 'em again:
     v16.14.2
     su@asusvivo:~/workspace/react_native/expo_dev$ yarn --version
     1.22.10
+
+
+    su@asusvivo:~/workspace/react_native/appace$ npm list webpack-dev-server
+
+      appace@1.0.0 /home/su/workspace/react_native/appace
+      └─┬ @expo/webpack-config@18.0.1
+        └── webpack-dev-server@4.11.1
 
 First time you run the project, run also the command: 
 
@@ -60,11 +73,13 @@ Also
 
 to fix error (https://github.com/expo/expo/issues/21469)
 
+en other packages, like
+
+    $ npm install @react-native-community/cookies
 
 # Backlog
 
-- change the hardcoded values of the pages with variables
-  - leverage the constants.js file    
+   
 - style the buttons of routing and avoid code duplication by creating a component (for instance to main page)
 - simplify the code before moving in further steps
 - put assets/images/main_page.jpg picture into main page, like done for my_app
@@ -75,5 +90,12 @@ to fix error (https://github.com/expo/expo/issues/21469)
 - git merge or delete main branch
 
 Done: 
-- simplified version of routing with switch statement
+- 2023-03-16 change the hardcoded values of the pages with variables
+  - leverage the constants.js file 
+- 2023-03-15 simplified version of routing with switch statement
   
+
+## Tech backlog
+
+
+- remove from dependencies     "@react-native-community/cookies": "^5.0.1",
