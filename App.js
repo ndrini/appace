@@ -135,6 +135,8 @@ export default function App() {
             page={pages.presentation}
           />
 
+          <Text> the page txt {getTexts(language, "PageTextPresentation")} </Text>
+
           <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
 
         </View >
@@ -156,7 +158,8 @@ export default function App() {
             page={pages.credits}
           />
 
-          <Text> the page txt {getTexts(language, "PageTextCredits")}</Text>
+          <Text> the page txt {getTexts(language, "PageTextCredits")} and other staff </Text>
+          <Text> the page txt {getTexts(language, "MainMenuButtonTextCredits")} and other staff </Text>
           <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
 
         </View>

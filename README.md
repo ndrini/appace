@@ -79,7 +79,8 @@ en other packages, like
 
 # Backlog
 
-   
+- add the page with only text 
+- add an image with flag to switch languages
 - style the buttons of routing and avoid code duplication by creating a component (for instance to main page)
 - simplify the code before moving in further steps
 - put assets/images/main_page.jpg picture into main page, like done for my_app
