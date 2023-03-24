@@ -1,5 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+// import { WebView } from 'react-native-webview';
+
+// import HTMLView from 'react-native-htmlview';
 
 import { translations } from './assets/texts/translations';
 import Cookies from 'universal-cookie';
@@ -10,6 +13,9 @@ import ButtonBack from './components/ButtonBack';
 import MainImageViewer from './components/MainImageViewer';
 // import handleLanguageChange from './src/HandleLanguageChange';
 import PageList from './components/PageList';
+
+import LanguageSelector from './components/LanguageSelector';
+import { flags } from './components/flags';
 
 import stylesMain from './styles';
 import { pages, constIcons } from './constants';
@@ -27,6 +33,7 @@ export default function App() {
   // set State
   const [page, setPage] = useState("main")
   const [language, setLanguage] = useState('it');
+  // const [currentLanguage, setCurrentLanguage] = useState('en');
 
   useEffect(() => {
     const savedLanguage = cookies.get('language');
@@ -39,6 +46,9 @@ export default function App() {
     setLanguage(newLanguage);
     cookies.set('language', newLanguage);
   };
+
+
+  const htmlContent = `<p><a href="http://jsdf.co">&hearts; nice job!</a></p>`;
 
   // const onPressToMain = () => { setPage(pages.main); }
   const onPressGoToPage = (pageName) => { setPage(pageName); }
@@ -74,6 +84,14 @@ export default function App() {
 
           </View>
 
+          <View>
+            <LanguageSelector
+              languages={Object.values(flags)}
+              currentLanguage={language}
+              onLanguageChange={handleLanguageChange}
+            />
+            <h1>{`Current language: ${language}`}</h1>
+          </View>
 
           <View style={styles.optionsContainer}>
             <View style={styles.optionsRow}>
@@ -114,7 +132,13 @@ export default function App() {
           <PlaceholderPage
             page={"map"}
           />
+
+          <Text>
+            <b>Questo testo è in grassetto</b>,
+            <i>questo testo è in corsivo</i>, e <u>questo testo è sottolineato</u></Text>
+
           <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
+
         </View >
       );
     case "list":
@@ -135,7 +159,14 @@ export default function App() {
             page={pages.presentation}
           />
 
-          <Text> the page txt {getTexts(language, "PageTextPresentation")} </Text>
+
+          {/* <HTMLView
+            value={htmlContent}
+            stylesheet={styles}
+          /> */}
+
+
+          <Text> {getTexts(language, "PageTextPresentation")} </Text>
 
           <ButtonBack onPress={() => onPressGoToPage(pages.main)} />
 

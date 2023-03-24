@@ -1,5 +1,5 @@
 export default `
-Routes of peace and nonviolence in Padua
+<h1>Routes of peace and nonviolence in Padua</h1>
 New edition for iOS app, May 2023
 Project by the Movimento Internazionale della Riconciliazione, Padua offices, 1/A Via Cornaro, Padua, Italy.
 Website: www.mirpadova.org

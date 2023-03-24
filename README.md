@@ -16,6 +16,14 @@ This app is developed using EXPO react-native SDK.
 
 Consider having a **3rd part check with snack.expo check**, like https://snack.expo.dev/@ndrini/appace
 
+
+Actual react-native version 0.71.4
+  (or install
+  
+    npx expo install react-native@0.71.4
+)
+
+
 ## Initial steps
 Just once run in the desired folder (for us in react-native): 
 
@@ -60,6 +68,8 @@ Check 'em again:
       └─┬ @expo/webpack-config@18.0.1
         └── webpack-dev-server@4.11.1
 
+
+  
 First time you run the project, run also the command: 
 
     npx expo install react-dom react-native-web @expo/webpack-config
@@ -77,10 +87,11 @@ en other packages, like
 
     $ npm install @react-native-community/cookies
 
+
 # Backlog
 
-- add the page with only text 
 - add an image with flag to switch languages
+- seletc text formatter (https://www.npmjs.com/package/react-native-htmlview?activeTab=dependents, https://www.npmjs.com/package/react-native-html-to-text , https://www.npmjs.com/package/react-native-html-to-text)
 - style the buttons of routing and avoid code duplication by creating a component (for instance to main page)
 - simplify the code before moving in further steps
 - put assets/images/main_page.jpg picture into main page, like done for my_app
@@ -91,6 +102,7 @@ en other packages, like
 - git merge or delete main branch
 
 Done: 
+- 2023-03-21 add the page with only text 
 - 2023-03-16 change the hardcoded values of the pages with variables
   - leverage the constants.js file 
 - 2023-03-15 simplified version of routing with switch statement
@@ -99,4 +111,12 @@ Done:
 ## Tech backlog
 
 
-- remove from dependencies     "@react-native-community/cookies": "^5.0.1",
+- remove from dependencies 
+  - ...
+
+
+Done 
+- removed 
+  - npm uninstall...
+    - react-native-webview
+    - react-native-community/cookies
