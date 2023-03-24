@@ -90,8 +90,12 @@ en other packages, like
 
 # Backlog
 
-- add an image with flag to switch languages
-- seletc text formatter (https://www.npmjs.com/package/react-native-htmlview?activeTab=dependents, https://www.npmjs.com/package/react-native-html-to-text , https://www.npmjs.com/package/react-native-html-to-text)
+- add map page
+  - install import MapView from 'react-native-maps';
+  - integrate PageMap.js component  
+- add list page
+  - integrate PageList.js component  
+- select text formatter (https://www.npmjs.com/package/react-native-htmlview?activeTab=dependents, https://www.npmjs.com/package/react-native-html-to-text , https://www.npmjs.com/package/react-native-html-to-text)
 - style the buttons of routing and avoid code duplication by creating a component (for instance to main page)
 - simplify the code before moving in further steps
 - put assets/images/main_page.jpg picture into main page, like done for my_app
@@ -102,6 +106,7 @@ en other packages, like
 - git merge or delete main branch
 
 Done: 
+- 2023-03-24 add an image with flag to switch languages
 - 2023-03-21 add the page with only text 
 - 2023-03-16 change the hardcoded values of the pages with variables
   - leverage the constants.js file 
