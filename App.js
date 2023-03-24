@@ -64,24 +64,8 @@ export default function App() {
             language={language}
           />
 
-          <View>
+          <View >
             <MainImageViewer />
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <Text>{translations[language].welcomeMessage}</Text>
-              <TouchableOpacity onPress={() => handleLanguageChange('en')}>
-                <Text>{translations.en.languageButton}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleLanguageChange('it')}>
-                <Text>{translations.it.languageButton}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleLanguageChange('es')}>
-                <Text>{translations.es.languageButton}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleLanguageChange('ca')}>
-                <Text>{translations.ca.languageButton}</Text>
-              </TouchableOpacity>
-            </View>
-
           </View>
 
           <View>
@@ -90,7 +74,6 @@ export default function App() {
               currentLanguage={language}
               onLanguageChange={handleLanguageChange}
             />
-            <h1>{`Current language: ${language}`}</h1>
           </View>
 
           <View style={styles.optionsContainer}>

@@ -8,24 +8,20 @@ export const flags = {
     code: 'en',
     name: 'English',
     icon: FlagSvgEn,
-    // icon: './gb.svg',
   },
   it: {
     code: 'it',
     name: 'Italian',
     icon: FlagSvgIt,
-    // icon: './it.svg',
   },
   es: {
     code: 'es',
     name: 'Spanish',
     icon: FlagSvgEs,
-    // icon: './es.svg',
   },
   ca: {
     code: 'ca',
     name: 'Catalan',
     icon: FlagSvgCa,
-    // icon: './ca.svg',
   },
 };

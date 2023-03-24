@@ -1,28 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, Image } from 'react-native';
-const MainPageImage = require('../assets/images/main_page.jpg');
-
+import { StyleSheet, View, Image } from 'react-native';
 
 function LanguageSelector({ languages, onLanguageChange }) {
     return (
-        <View>
+        <View style={Styles.container}>
             {languages.map((language) => (
                 <Image
                     key={language.code}
                     source={language.icon}
-                    // source={MainPageImage}
-                    // alt={language.name}
+                    alt={language.name}
                     onClick={() => onLanguageChange(language.code)}
-                    // style={{ cursor: 'pointer' }}
-                    style={Style.image}
-                    />
+                    style={Styles.image}
+                />
             ))}
-
-            <Image 
-            source={MainPageImage}
-            style={Style.image} />
-
         </View>
     );
 }
@@ -39,11 +30,19 @@ LanguageSelector.propTypes = {
     onLanguageChange: PropTypes.func.isRequired,
 };
 
-const Style = StyleSheet.create({
+const Styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row'
+    },
     image: {
         width: 44,
         height: 32,
-        borderRadius: 2,
+        borderRadius: 4,
+        marginHorizontal: 5,
+        cursor: 'pointer'
     },
 });
 
